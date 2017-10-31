@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  $( document ).ready(function() {
+    $.ajax({
+      method: "GET",
+      url: "/api/v1/pages.json",
+      data: { id: "<%= @page.url%>" }
+    }).done(function( data ) {
+      console.log(data);
+      $("#code").text( JSON.stringify(data, null, 2) );
+    });
+  });
+</script>
+
+
+<div class="table-users">
+  <div class="header"><%= @page.url%></div>
+</div>
+
+<pre>
+  <code id="code">
+  </code>
+</pre>

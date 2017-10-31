@@ -1,0 +1,22 @@
+<div class="table-users">
+  <div class="header">INDEXED URLS</div>
+   
+  <table cellspacing="0">
+    <tr>
+      <th>Id</th>
+      <th>Url</th>
+      <th>Created at</th>
+    </tr>
+    <%-@pages.each do |page|%>
+      <tr>
+        <th><%=page.id%></th>
+        <th>
+          <a href="<%=page_path(page)%>" target="_blank">
+            <%=page.url%>
+          </a>
+        </th>
+        <th><%=page.created_at%></th>
+      </tr>
+    <%end%>
+  </table>
+</div>
